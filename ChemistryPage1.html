@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>只有代碼能贏過PPT</title>
+    <script>
+        // alert('化2甲班上的對吧??');
+        // var password = prompt("請輸入密碼");
+        // while(password === 0000)
+        // {
+        //     alert("你輸入的帳號有誤!!");
+        //     var password = prompt("請輸入密碼");
+        // }
+        // alert("輸入成功")
+    </script>
+    <style>
+        body {
+        background: url(evenstar.jpg) no-repeat center;
+        background-size: 200% ;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        
+      }
+      .star {
+        position: absolute;
+        width: 0;
+        height: 0;
+        opacity: 0.2;
+        border: 2px solid transparent;
+        border-bottom: 4px solid #fff;
+        animation: flash 2s infinite linear;
+      }
+      .star::before {
+        content: "";
+        position: absolute;
+        left: -2px;
+        top: 4px;
+        border: 2px solid transparent;
+        border-top: 4px solid #fff;
+      }
+      @keyframes flash {
+        20% {
+          opacity: 0.2;
+        }
+        40% {
+          opacity: 0.5;
+        }
+        60% {
+          opacity: 1;
+        }
+        80% {
+          opacity: 0.5;
+        }
+        100% {
+          opacity: 0.2;
+        }
+      }
+        /* ------------------------------------ */
+        * {  
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }    
+
+        .backgroundcanvas {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: -1;
+        }
+          /*---------------------------------------button按鈕動畫 化二甲第9族專用 */           
+        a{
+            position: absolute; /*绝对对位*/
+            top: 50%; /*距上部*/
+            left: 50%; 
+            transform: translate(-50%,-50%); /*移动，根据X,Y轴*/
+            width: 400px; /*宽*/
+            height: 120px; /*高*/
+            text-align: center; /*字体水平居中*/
+            font-size: 45px; /*字体大小*/
+            line-height: 120px; /*行高*/
+            color: #fff;
+            text-transform: uppercase; /*字体大写*/
+            text-decoration: none; /*字体增加装饰：去除下划线*/
+            font-family: sans-serif; /*非衬线体*/
+            box-sizing: border-box; /*盒模型大小规则*/
+            background: linear-gradient(
+                90deg,#03a9f4, #f441a5, #ffeb3b, 
+            #03a9f4, #f441a5, #ffeb3b, #03a9f4); /*渐变背景*/
+            border-radius: 60px; /*边框圆角*/
+            background-size: 400%; /*背景大小*/
+            z-index: 1; /*层叠定位*/
+}
+        a:hover{
+            animation: animate 8s linear infinite alternate ; /*动画: 名称 时间 线性 循环 播放完回退播放*/
+        }       
+        @keyframes animate{
+            0%{
+                background-position: 0%; /*修改背景定位，实现渐变色炫光*/
+            }
+            50%{
+                background-position: 100%;
+            }
+            100%{
+                background-position: 0%;
+            }
+        }
+        /* ------------------------------------------------------------------------------------------------ */
+        
+        
+        /* ------------------------------------------------------------------------------------------------ */
+        a::before{ /*之前添加*/
+            content: ''; /*内容*/
+            position: absolute; /*绝对定位*/
+            top:-5px; /*当设置对立的2个定位属性时，元素的大小将由对立的大小决定*/
+            left: -5px;
+            right: -5px;
+            bottom: -5px; /*当设置对立的2个定位属性时，元素的大小将由对立的大小决定*/
+            z-index: -1; 
+            background: linear-gradient(
+                90deg,#03a9f4, #f441a5, #ffeb3b, #03a9f4, 
+            #f441a5, #ffeb3b, #03a9f4);
+             border-radius: 40px;
+            background-size: 400%;
+            filter: blur(20px); /*过渡：模糊*/
+            opacity: 0; /*透明度*/
+            transition: 1s; /*过渡时间*/
+        }
+        a:hover::before{
+            filter: blur(20px);
+            opacity: 1;
+            animation: animate 8s linear infinite; /*注意动画名称统一*/
+        }
+        .BigName {
+            font-size: 40px;
+            font-style: italic;
+            color: white;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%,-80%);
+            
+        }
+        .bigborder {
+            width: 700px;
+            height: 700px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border: 15px solid ;
+            opacity: 0;
+            animation-name: move;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            box-shadow: 0px 0px 30px 30px white;
+            filter: blur(0.5px);
+            
+        }
+        @keyframes move {
+            0% {
+                opacity: .7;
+                border-color: red;
+            }
+            15% {
+                opacity: .7;
+                border-color: orange;
+            }
+            30% {
+                opacity: .7;
+                border-color: yellow;
+            }
+            45% {
+                opacity: .7;
+                border-color: green;
+            }
+            60% {
+                opacity: .7;
+                border-color: skyblue;
+            }
+            75% {
+                opacity: .7;
+                border-color: blue;
+            }
+            90% {
+                opacity: .7;
+                border-color: purple;
+            }
+            100% {
+                opacity: .7;
+                border-color: white;
+            }
+        }
+    </style>
+</head>
+<body>
+        <div class="bigborder"></div>
+        <div class="BigName">化二甲&nbsp;&nbsp;&nbsp;第九組</div> 
+        <div>
+            <a href="spacenine.html">點擊進入</a>
+        </div>
+        
+
+
+
+
+
+
+
+
+    <!-- ----------------------------------------------------------------------------------------------------背景效果 -->
+    <canvas id="Meteor" class="backgroundcanvas"></canvas>
+
+    <script type="text/javascript">
+      var starCount = 300;
+      var context;
+      function starInit() {
+        var bg = document.querySelector("body");
+        for (var i = 0; i < starCount; i++) {
+          var star = document.createElement("div");
+          star.classList.add("star");
+          bg.appendChild(star);
+        }
+      }
+      function starPosition() {
+        var stars = document.querySelectorAll(".star");
+        for (var i = 0; i < starCount; i++) {
+          stars[i].style.left = Math.random() * window.innerWidth + "px";
+          stars[i].style.top = Math.random() * window.innerHeight + "px";
+          stars[i].style.animationDelay = Math.random() * 10 + "s";
+        }
+      }
+
+      function init() {
+        var Meteor = document.getElementById("Meteor");
+        Meteor.width = window.innerWidth;
+        Meteor.height = window.innerHeight;
+        context = Meteor.getContext("2d");
+      }
+
+      function MeteorRain() {
+        this.x = Math.random() * window.innerWidth;
+        this.y = Math.random() * window.innerHeight;
+        this.length = Math.ceil(Math.random() * 80 + 150);
+        this.angle = 30;
+        this.cos = Math.cos((this.angle * 3.14) / 180);
+        this.sin = Math.sin((this.angle * 3.14) / 180);
+        this.width = this.length * this.cos;
+        this.height = this.length * this.sin;
+        this.speed = Math.ceil(Math.random() + 0.5);
+        this.shifting_x = this.speed * this.cos;
+        this.shifting_y = this.speed * this.sin;
+
+        this.countPos = function () {
+          this.x = this.x - this.shifting_x;
+          this.y = this.y + this.shifting_y;
+        };
+        this.draw = function () {
+          context.save();
+          context.beginPath();
+          context.lineWidth = 1;
+          context.globalAlpha = this.alpha;
+          var line = context.createLinearGradient(
+            this.x,
+            this.y,
+            this.x + this.width,
+            this.y - this.height
+          );
+          line.addColorStop(0, "white");
+          line.addColorStop(0.5, "grey");
+          line.addColorStop(1.0, "black");
+          context.strokeStyle = line;
+          context.moveTo(this.x, this.y);
+          context.lineTo(this.x + this.width, this.y - this.height);
+          context.closePath();
+          context.stroke();
+          context.restore();
+        };
+        this.move = function () {
+          var x = this.x + this.width - this.shifting_x;
+          var y = this.y - this.height + this.shifting_y;
+          context.clearRect(
+            x - 3,
+            y - 3,
+            this.shifting_x + 5,
+            this.shifting_y + 5
+          );
+          this.countPos();
+          this.alpha -= 0.002;
+          this.draw();
+        };
+      }
+      function playRains() {
+        for (var n = 0; n < rainCount; n++) {
+          var rain = rains[n];
+          rain.move();
+          if (rain.y > window.innerHeight) {
+            context.clearRect(
+              rain.x,
+              rain.y - rain.height,
+              rain.width,
+              rain.height
+            )
+            rains[n] = new MeteorRain();
+          }
+        }
+        setTimeout("playRains()", 2);
+      }
+      var rainCount = 20;
+      var rains = new Array();
+      init();
+      starInit();
+      starPosition();
+      for (var i = 0; i < rainCount; i++) {
+        var rain = new MeteorRain();
+        rain.draw();
+        rains.push(rain);
+      }
+      playRains();
+    </script>
+</body>
+</html>
