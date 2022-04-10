@@ -1,0 +1,387 @@
+
+.box {
+    margin-top: 2.666667rem;
+}
+.container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 1.5rem;
+    background: #393e46;
+    border-radius: 1.5rem ;
+    z-index: 2;
+    overflow: hidden;
+}
+.container:after {
+    content: '';
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 85%;
+    height: 85%;
+    background: linear-gradient(#2196f3,#e91e63);
+    clip-path: circle(20% at 10% 10%);
+    z-index: 1;   
+}
+.container:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 40%;
+    width: 65%;
+    height: 65%;
+    background: linear-gradient(#f00,#f0f);
+    clip-path: circle(30% at right 70%);
+    z-index: 1;
+}
+/* ------------------------------------------------------- */
+.nav {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 750px;
+    min-width: 320px;
+    width: 100%;
+    height: 2.66666rem;
+    border-radius: 1.5rem ;
+    background: linear-gradient(
+                90deg,#03a9f4, #f441a5, #ffeb3b, 
+            #03a9f4, #f441a5, #ffeb3b, #03a9f4); 
+    animation: animate 8s linear 1s infinite;  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;         
+}
+       
+@keyframes animate{
+    0%{
+        background-position: 0px; /*修改背景定位，实现渐变色炫光*/
+    }
+    50%{
+        background-position: 320px;
+    }
+    100%{
+        background-position: 750px;
+    }
+}
+/* ------------------------------------------------------ */
+.nav h3 {
+    font-size: 0.99999rem;
+    flex: 1;
+    width: 33%;
+    text-align: center;
+    line-height: 2.66666rem;
+    color: white;
+}
+.nav .forwardlist {
+    position: relative;
+    width: 33%;
+}
+.nav .forwardlist img {
+    position: absolute;
+    top: .133333rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2.133333rem;
+    height: 2.133333rem;
+    background-size: 2.133333rem 2.133333rem;
+}
+.nav h4 {
+    font-size: 0.99999rem;
+    flex: 1;
+    width: 33%;
+    text-align: center;
+    line-height: 2.66666rem;
+    color: white;
+}
+.container .box {
+    z-index: 2;
+    position: relative;
+    width: 10.5rem;
+    height: 10.5rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255,255,255,.5);
+    border-left: 1px solid rgba(255,255,255,.5);
+    backdrop-filter: blur(.133333rem);
+    box-shadow: .533333rem .533333rem 1.333333rem rgba( 0, 0, 0, .5);
+}
+.container .box:nth-child(-2n+5) {
+    border-radius: 0px;
+}
+.container .box .imgBX {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    transition: .5s;
+    transition-delay: 0.25s;
+    filter: invert(1);
+}
+.container .box:nth-child(-2n+5) .imgBX {
+    transition-delay: 0s;
+    transform:scale(1) translateY(0);
+}
+.container .box:hover .imgBX {
+    transform: scale(0);
+    transition-delay: 0s;
+}
+.container .box:nth-child(-2n+5):hover .imgBX {
+    transform: scale(1) translateY(-100%);
+    transition-delay: 0s;
+}
+.container .box .imgBX img {
+    max-width: 2.666667rem;
+}
+.container .box .content {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    padding: .533333rem;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: .5s;
+    background: linear-gradient(skyblue,springgreen);
+    transform: scale(0);  
+    transition-delay: 0s;
+    border-top: 1px solid rgba(255,255,255,.5);
+    border-left: 1px solid rgba(255,255,255,.5);
+    backdrop-filter: blur(.133333rem);
+    box-shadow: .533333rem .533333rem 1.333333rem rgba( 0, 0, 0, .5);
+}
+.container .box:nth-child(-2n+5) .content {
+    border-radius: 0px;
+}
+.container .box:nth-child(-2n+5) .content {
+    transform: scale(1) translateY(calc(100% - 1px));
+    transition-delay: 0s;
+}
+.container .box:hover .content {
+    transform: scale(1);
+    transition-delay: .25s;
+}
+.container .box:nth-child(-2n+5):hover .content {
+    transform: scale(1);
+    transition-delay: 0s;
+}
+.container .box:nth-child(2) .content {
+    background: linear-gradient(red,orange);
+}
+.container .box:nth-child(3) .content {
+    background: linear-gradient(purple,rgb(214, 50, 146));
+}
+.container .box:nth-child(4) .content {
+    background: linear-gradient(yellow,springgreen);
+    
+}
+.container .box .content .icon img {
+    max-width: 4.266667rem;
+    filter: invert(.25);
+}
+.container .box .content h3 {
+    color: rgba(255, 255,255, 0.7);
+    text-transform: uppercase;
+    font-size: .666667rem;
+    letter-spacing: .053333rem;
+    margin-top: 1.066667rem;
+}
+.container .box .content h4 {
+    color: rgba(255, 255,255, 0.7);
+    font-size: .666667rem;
+    font-weight: 500;
+}
+.container {
+    padding-bottom: 4.666667rem;
+}
+/* -------------------------------------------------- */
+.dot1 {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%,-50% );
+    width: .213333rem;
+    height: .213333rem;
+    border-radius: 50%;
+    background-color:white;
+    cursor: pointer;
+    
+}
+.imgBX section[ class ^= riple ] {
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%,-50% );
+    width: .213333rem;
+    height: .213333rem;
+    box-shadow: 0px 0px .32rem white;
+    border-radius: 50%;
+    animation: keepone 1.2s linear infinite;
+}
+.imgBX .smallbox2 {
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+}
+.imgBX .smallbox2 .riple2 {
+    animation-delay: 0.4s;
+}
+.imgBX .smallbox2 .riple3 {
+    animation-delay: 0.8s;
+}
+.imgBX .smallbox .riple2 {
+    animation-delay: 0.4s;
+}
+.imgBX .smallbox .riple3 {
+    animation-delay: 0.8s;
+}
+
+.imgBX .smallbox {
+    position: absolute;
+    bottom: .5rem;
+    right: .5rem;
+}
+
+
+@keyframes keepone {
+
+    0% {
+
+    }
+    70% { 
+        width: 1.933333rem;
+        height: 1.933333rem;
+        opacity: 1;
+    }
+    100% {
+        width: 3.866667rem;
+        height: 3.866667rem;
+        opacity: 0;
+    }
+}
+/* ----------------------------------------- */
+.dot2 {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%,-50% );
+    width: .213333rem;
+    height: .213333rem;
+    border-radius: 50%;
+    background-color:black;
+    cursor: pointer;
+    
+}
+.imgBX div[ class ^= riple ] {
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%,-50% );
+    width: .213333rem;
+    height: .213333rem;
+    box-shadow: 0px 0px .32rem black;
+    border-radius: 50%;
+    animation: keeptwo 1.2s linear infinite;
+}
+.imgBX .smallbox4 {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+}
+.imgBX .smallbox4 .riple4 {
+    animation-delay: 0.4s;
+}
+.imgBX .smallbox4 .riple5 {
+    animation-delay: 0.8s;
+}
+.imgBX .smallbox3 .riple4 {
+    animation-delay: 0.4s;
+}
+.imgBX .smallbox3 .riple5 {
+    animation-delay: 0.8s;
+}
+
+.imgBX .smallbox3 {
+    position: absolute;
+    bottom: .5rem;
+    left: .5rem;
+}
+
+
+@keyframes keeptwo {
+
+    0% {
+
+    }
+    70% { 
+        width: 1.933333rem;
+        height: 1.933333rem;
+        opacity: 1;
+    }
+    100% {
+        width: 3.866667rem;
+        height: 3.866667rem;
+        opacity: 0;
+    }
+}
+
+.allmove {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    width: 100%;
+    max-width: 750px;
+    min-width: 720px;
+    display: flex;
+    background:  #393e46;
+    height: 2.66666rem;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+     
+}
+.allmove  .rightmove {
+    flex: 1;
+    width: 50%;
+    filter: invert(1);
+    border-right: 1px solid black;
+    
+}
+.allmove  .rightmove a img {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-size: 1.5rem 1.5rem;
+}
+.allmove .pptmove {
+    
+    flex: 1;
+    width: 50%;
+    filter: invert(1);
+}
+.allmove  .pptmove a img {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-size: 1.5rem 1.5rem;
+}
