@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .box {
+            position: relative;
+            width: 700px;
+            height: 700px;
+            margin: 50px auto;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        .dot1 {
+            position: absolute;
+            z-index: 3;
+            top: 50%;
+            left: 50%;
+            transform: translate( -50%,-50% );
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color:green;
+            cursor: pointer;
+            
+        }
+         div[ class ^= riple ] {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate( -50%,-50% );
+            width: 8px;
+            height: 8px;
+            box-shadow: 0px 0px 12px green;
+            border-radius: 50%;
+            animation: keep 1.2s linear infinite;
+        }
+        .smallbox2 {
+            position: absolute;
+            top: 85%;
+            left: 55%;
+        }
+        .smallbox2 .riple2 {
+            animation-delay: 0.4s;
+        }
+        .smallbox2 .riple3 {
+            animation-delay: 0.8s;
+        }
+        .smallbox .riple2 {
+            animation-delay: 0.4s;
+        }
+        .smallbox .riple3 {
+            animation-delay: 0.8s;
+        }
+
+        .smallbox {
+            position: absolute;
+            top: 59.5%;
+            left: 37.5%;
+        }
+        
+
+        @keyframes keep {
+
+            0% {
+
+            }
+            70% { 
+                width: 40px;
+                height: 40px;
+                opacity: 1;
+            }
+            100% {
+                width: 70px;
+                height: 70px;
+                opacity: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="smallbox">
+            <div class="dot1"></div>
+            <div class="riple1"></div>
+            <div class="riple2"></div>
+            <div class="riple3"></div>
+        </div>
+        <div class="smallbox2">
+            <div class="dot1"></div>
+            <div class="riple1"></div>
+            <div class="riple2"></div>
+            <div class="riple3"></div>
+        </div>           
+    </div>
+    
+</body>
+</html>
